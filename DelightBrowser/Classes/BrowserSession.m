@@ -16,6 +16,7 @@
 @synthesize appToken = _appToken;
 @synthesize annotationMode = _annotationMode;
 @synthesize statusBarHidden = _statusBarHidden;
+@synthesize prototypeApp = _prototypeApp;
 @synthesize URL = _URL;
 @synthesize tasks = _tasks;
 
@@ -28,6 +29,7 @@
         self.appToken = [sessionDict objectForKey:@"appToken"];
         self.annotationMode = [[sessionDict objectForKey:@"annotation"] integerValue];
         self.statusBarHidden = [[sessionDict objectForKey:@"statusBarHidden"] boolValue];
+        self.prototypeApp = [[sessionDict objectForKey:@"prototypeApp"] boolValue];
         self.URL = [NSURL URLWithString:[sessionDict objectForKey:@"url"]];
         
         NSMutableArray *tasksArray = [NSMutableArray array];

@@ -17,7 +17,7 @@
 @property (strong, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *backButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *forwardButton;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *reloadButton;
+@property (strong, nonatomic) IBOutlet UIButton *floatingTasksButton;
 
 - (id)initWithBrowserSession:(BrowserSession *)browserSession;
 - (IBAction)backButtonPressed:(id)sender;

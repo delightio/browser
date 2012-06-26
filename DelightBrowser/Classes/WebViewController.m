@@ -10,8 +10,9 @@
 #import "TaskViewController.h"
 #import "BrowserSession.h"
 #import <Delight/Delight.h>
+#import <QuartzCore/QuartzCore.h>
 
-@interface Delight (Annotation) 
+@interface Delight (Annotation)
 + (void)startWithAppToken:(NSString *)appToken annotation:(NSInteger)annotation;
 @end
 
@@ -22,7 +23,7 @@
 @synthesize toolbar = _toolbar;
 @synthesize backButton = _backButton;
 @synthesize forwardButton = _forwardButton;
-@synthesize reloadButton = _reloadButton;
+@synthesize floatingTasksButton = _floatingTasksButton;
 
 - (id)initWithBrowserSession:(BrowserSession *)browserSession
 {
@@ -42,6 +43,15 @@
     
     NSURLRequest *request = [NSURLRequest requestWithURL:self.browserSession.URL];
     [self.webView loadRequest:request];
+    
+    if (self.browserSession.prototypeApp) {
+        // Hide the toolbar
+        self.toolbar.hidden = YES;
+        self.floatingTasksButton.hidden = NO;
+        self.webView.frame = self.view.bounds;
+        self.floatingTasksButton.layer.masksToBounds = YES;
+        self.floatingTasksButton.layer.cornerRadius = 10.0;
+    }
 }
 
 - (void)viewDidUnload
@@ -52,7 +62,7 @@
     self.toolbar = nil;
     self.backButton = nil;
     self.forwardButton = nil;
-    self.reloadButton = nil;
+    self.floatingTasksButton = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

@@ -13,7 +13,8 @@
 @property (assign, nonatomic) NSInteger sessionID;
 @property (strong, nonatomic) NSString *appToken;
 @property (assign, nonatomic) NSInteger annotationMode;
-@property (assign, nonatomic) BOOL statusBarHidden;
+@property (assign, nonatomic, getter=isStatusBarHidden) BOOL statusBarHidden;
+@property (assign, nonatomic, getter=isPrototypeApp) BOOL prototypeApp;
 @property (strong, nonatomic) NSURL *URL;
 @property (strong, nonatomic) NSArray *tasks;
 

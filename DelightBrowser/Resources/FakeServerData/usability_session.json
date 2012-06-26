@@ -1,25 +1,36 @@
 {
     "id": 12345,
-    "url": "http://www.delight.io",
+    "url": "https://mobile.united.com/Home/SwitchFormat?ForceNoJs=false",
     "appToken": "6b11a73985b3a6873aa8a9c5229",
     "annotation": 1,
     "statusBarHidden": false,
+    "prototypeApp": false,
     "tasks":
     [
         {
             "id": 100,
-            "name": "Register a new account",
-            "description": "Create a new Delight account for yourself."
+            "name": "Book a flight",
+            "description": "Book an economy class return flight from SFO to JFK departing on July 15 and returning on July 18."
         },
         {
             "id": 101,
-            "name": "Log in",
-            "description": "Log in to your account."
+            "name": "Check in online",
+            "description": "Check in online using booking reference A9XLS."
         },
         {
-            "id": 102,
-            "name": "Create a new app",
-            "description": "Create an app from your dashboard."
-        }     
+            "id": 103,
+            "name": "Change your assigned seat",
+            "description": "Change your assigned seat to 32F."
+        },
+        {
+            "id": 104,
+            "name": "Link a MileagePlus account",
+            "description": "Link the following MileagePlus number to your booking:\n\n215811421"
+        },
+        {
+            "id": 105,
+            "name": "Upgrade to first class",
+            "description": "Purchase an upgrade to the first class cabin using your MileagePlus miles."
+        }
     ]
 }

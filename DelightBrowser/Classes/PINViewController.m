@@ -79,6 +79,8 @@
         filePath = [[NSBundle mainBundle] pathForResource:@"browser_session" ofType:@"json"];
     } else if ([self.pinTextField.text isEqualToString:@"5678"]) {
         filePath = [[NSBundle mainBundle] pathForResource:@"usability_session" ofType:@"json"];
+    } else if ([self.pinTextField.text isEqualToString:@"2468"]) {
+        filePath = [[NSBundle mainBundle] pathForResource:@"prototype_session" ofType:@"json"];
     }
     
     if (filePath) {
@@ -90,7 +92,7 @@
         WebViewController *webController = [[WebViewController alloc] initWithBrowserSession:browserSession];
         [self.navigationController pushViewController:webController animated:YES];
     } else {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Invalid PIN" message:@"Try 1234 for screen recording only, or 5678 for screen and camera recording." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Invalid PIN" message:@"Try one of the following:\n\n1234 (screen recording only)\n5678 (screen + camera recording)\n2468 (prototype app demo)" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [alertView show];
         self.goButton.hidden = NO;
         self.pinTextField.text = @"";

@@ -4,6 +4,7 @@
     "appToken": "6b11a73985b3a6873aa8a9c5229",
     "annotation": 0,
     "statusBarHidden": false,
+    "prototypeApp": false,
     "tasks":
     [
         {
@@ -20,6 +21,11 @@
             "id": 102,
             "name": "Create a new app",
             "description": "Create an app from your dashboard."
-        }     
+        },
+        {
+            "id": 103,
+            "name": "Find the setup instructions",
+            "description": "Find the page with the setup instructions."
+        }
     ]
 }
