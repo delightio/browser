@@ -55,12 +55,7 @@
     [self.actionButtonsView.layer insertSublayer:actionGradient atIndex:0];
     
     if (self.firstAppearance) {
-        // Show "Start" rather than "Continue" and hide the next task button
-        CGFloat buttonsHeightDecrease = CGRectGetMaxY(self.continueButton.frame) - CGRectGetMaxY(self.nextTaskButton.frame);
-        self.nextTaskButton.hidden = YES;
-        [self.continueButton setTitle:@"Start" forState:UIControlStateNormal];
-        self.actionButtonsView.frame = CGRectMake(self.actionButtonsView.frame.origin.x, self.actionButtonsView.frame.origin.y + buttonsHeightDecrease, 
-                                                  self.actionButtonsView.frame.size.width, self.actionButtonsView.frame.size.height - buttonsHeightDecrease);
+        [self showStartButtonAnimated:NO];
     }
 }
 
@@ -103,7 +98,7 @@
     completedTask.status = TaskStatusCompleted;
     
     currentTaskIndex++;
-    [self updateViews];
+    [self showStartButtonAnimated:YES];
 }
 
 - (IBAction)endTestButtonPressed:(id)sender
@@ -144,6 +139,41 @@
     
     // Make sure gradient size matches up with its superview
     actionGradient.frame = self.actionButtonsView.bounds;
+}
+
+- (void)showStartButtonAnimated:(BOOL)animated
+{
+    // Show "Start" rather than "Continue" and hide the next task button
+    CGFloat buttonsHeightDecrease = CGRectGetMaxY(self.continueButton.frame) - CGRectGetMaxY(self.nextTaskButton.frame);
+    CGRect newActionButtonsFrame = CGRectMake(self.actionButtonsView.frame.origin.x, self.actionButtonsView.frame.origin.y + buttonsHeightDecrease, 
+                                              self.actionButtonsView.frame.size.width, self.actionButtonsView.frame.size.height - buttonsHeightDecrease);
+    
+    void (^animations)(void) = ^{
+        self.actionButtonsView.frame = newActionButtonsFrame;        
+    };
+    
+    void (^completion)(BOOL) = ^(BOOL finished){
+        [self updateViews];
+        self.nextTaskButton.hidden = YES;
+        self.endTestButton.hidden = YES;
+        self.continueButton.frame = self.nextTaskButton.frame;
+        [self.continueButton setTitle:@"Start" forState:UIControlStateNormal];
+    };
+
+    if (animated) {
+        [UIView animateWithDuration:0.25 
+                         animations:^{
+                             self.actionButtonsView.frame = CGRectMake(self.actionButtonsView.frame.origin.x, CGRectGetMaxY(self.actionButtonsView.frame),
+                                                                       self.actionButtonsView.frame.size.width, self.actionButtonsView.frame.size.height);
+                         }
+                         completion:^(BOOL finished){
+                             completion(finished);
+                             [UIView animateWithDuration:0.25 animations:animations];
+                         }];
+    } else {
+        animations();
+        completion(YES);
+    }
 }
 
 #pragma mark - UIAlertViewDelegate
