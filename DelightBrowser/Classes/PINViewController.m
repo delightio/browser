@@ -26,8 +26,8 @@
     frame.size.height = self.goButton.frame.size.height + 1.5;
     self.pinTextField.frame = frame;
     
-    UIImage *normalImage = [[UIImage imageNamed:@"button_rounded.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(9, 3, 9, 3)];
-    UIImage *pressedImage = [[UIImage imageNamed:@"button_rounded_pressed.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(9, 3, 9, 3)];
+    UIImage *normalImage = [[UIImage imageNamed:@"button_rounded.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(14, 5, 14, 5)];
+    UIImage *pressedImage = [[UIImage imageNamed:@"button_rounded_pressed.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(14, 5, 14, 5)];
     [self.goButton setBackgroundImage:normalImage forState:UIControlStateNormal];
     [self.goButton setBackgroundImage:pressedImage forState:UIControlStateHighlighted];
 }
