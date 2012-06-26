@@ -59,10 +59,15 @@
 #pragma mark - IBActions
 
 - (IBAction)goButtonPressed:(id)sender
-{    
-    self.goButton.hidden = YES;
-    [self.activityIndicator startAnimating];
-    [self performSelector:@selector(parseResponse) withObject:nil afterDelay:1.0];
+{
+    if ([self.pinTextField.text length] == 0) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"PIN Required" message:@"You must enter a PIN to use this app." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        [alertView show];
+    } else {
+        self.goButton.hidden = YES;
+        [self.activityIndicator startAnimating];
+        [self performSelector:@selector(parseResponse) withObject:nil afterDelay:1.0];
+    }
 }
 
 - (IBAction)helpButtonPressed:(id)sender
