@@ -111,7 +111,7 @@
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:taskController];
     navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     
-    [self presentViewController:navigationController animated:!firstAppearance completion:NULL];
+    [self presentViewController:navigationController animated:YES completion:NULL];
     firstAppearance = NO;
 }
 
