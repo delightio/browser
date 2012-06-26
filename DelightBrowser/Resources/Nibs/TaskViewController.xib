@@ -164,10 +164,6 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
-								<double key="IBUIContentEdgeInsets.top">0.0</double>
-								<double key="IBUIContentEdgeInsets.bottom">1</double>
-								<double key="IBUIContentEdgeInsets.left">0.0</double>
-								<double key="IBUIContentEdgeInsets.right">0.0</double>
 								<string key="IBUINormalTitle">Next Task</string>
 								<object class="NSColor" key="IBUIHighlightedTitleColor" id="586915176">
 									<int key="NSColorSpace">3</int>
@@ -180,10 +176,6 @@
 								<object class="NSColor" key="IBUINormalTitleShadowColor" id="360783268">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MC41AA</bytes>
-								</object>
-								<object class="NSCustomResource" key="IBUINormalBackgroundImage" id="772806245">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">button_gray_wide.png</string>
 								</object>
 								<object class="IBUIFontDescription" key="IBUIFontDescription" id="37481086">
 									<int key="type">2</int>
@@ -207,15 +199,10 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
-								<double key="IBUIContentEdgeInsets.top">0.0</double>
-								<double key="IBUIContentEdgeInsets.bottom">1</double>
-								<double key="IBUIContentEdgeInsets.left">0.0</double>
-								<double key="IBUIContentEdgeInsets.right">0.0</double>
 								<string key="IBUINormalTitle">End Test</string>
 								<reference key="IBUIHighlightedTitleColor" ref="586915176"/>
 								<reference key="IBUINormalTitleColor" ref="857785131"/>
 								<reference key="IBUINormalTitleShadowColor" ref="360783268"/>
-								<reference key="IBUINormalBackgroundImage" ref="772806245"/>
 								<reference key="IBUIFontDescription" ref="37481086"/>
 								<reference key="IBUIFont" ref="252585859"/>
 							</object>
@@ -225,20 +212,16 @@
 								<string key="NSFrame">{{20, 72}, {280, 45}}</string>
 								<reference key="NSSuperview" ref="570035090"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
-								<double key="IBUIContentEdgeInsets.top">0.0</double>
-								<double key="IBUIContentEdgeInsets.bottom">1</double>
-								<double key="IBUIContentEdgeInsets.left">0.0</double>
-								<double key="IBUIContentEdgeInsets.right">0.0</double>
 								<string key="IBUINormalTitle">Continue</string>
 								<reference key="IBUIHighlightedTitleColor" ref="586915176"/>
 								<reference key="IBUINormalTitleColor" ref="857785131"/>
 								<reference key="IBUINormalTitleShadowColor" ref="360783268"/>
-								<reference key="IBUINormalBackgroundImage" ref="772806245"/>
 								<reference key="IBUIFontDescription" ref="37481086"/>
 								<reference key="IBUIFont" ref="252585859"/>
 							</object>
@@ -575,10 +558,6 @@
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">button_gray_wide.png</string>
-			<string key="NS.object.0">{280, 45}</string>
-		</object>
 		<string key="IBCocoaTouchPluginVersion">1181</string>
 	</data>
 </archive>

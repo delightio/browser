@@ -54,6 +54,15 @@
     actionGradient.locations = [NSArray arrayWithObjects:[NSNumber numberWithFloat:0.0], [NSNumber numberWithFloat:1.0], nil];
     [self.actionButtonsView.layer insertSublayer:actionGradient atIndex:0];
     
+    UIImage *normalImage = [[UIImage imageNamed:@"button_rounded.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(9, 3, 9, 3)];
+    UIImage *pressedImage = [[UIImage imageNamed:@"button_rounded_pressed.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(9, 3, 9, 3)];
+    [self.nextTaskButton setBackgroundImage:normalImage forState:UIControlStateNormal];
+    [self.nextTaskButton setBackgroundImage:pressedImage forState:UIControlStateHighlighted];
+    [self.endTestButton setBackgroundImage:normalImage forState:UIControlStateNormal];
+    [self.endTestButton setBackgroundImage:pressedImage forState:UIControlStateHighlighted];
+    [self.continueButton setBackgroundImage:normalImage forState:UIControlStateNormal];
+    [self.continueButton setBackgroundImage:pressedImage forState:UIControlStateHighlighted];
+    
     if (self.firstAppearance) {
         [self showStartButtonAnimated:NO];
     }
