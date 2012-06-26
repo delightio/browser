@@ -20,6 +20,7 @@
 @synthesize descriptionLabel = _descriptionLabel;
 @synthesize actionButtonsView = _actionButtonsView;
 @synthesize nextTaskButton = _nextTaskButton;
+@synthesize endTestButton = _endTestButton;
 
 - (id)initWithTasks:(NSArray *)tasks
 {
@@ -36,9 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonPressed:)];
-    
+        
     // Find the current task
     for (Task *task in self.tasks) {
         if (task.status != TaskStatusCompleted) {
@@ -63,6 +62,7 @@
     self.descriptionLabel = nil;
     self.actionButtonsView = nil;
     self.nextTaskButton = nil;
+    self.endTestButton = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -78,15 +78,11 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
     [self updateViews];
 }
 
 #pragma mark - Actions
-
-- (void)cancelButtonPressed:(id)sender
-{
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
 
 - (IBAction)nextTaskButtonPressed:(id)sender
 {
@@ -103,11 +99,16 @@
     [alertView show];
 }
 
+- (IBAction)continueButtonPressed:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
 #pragma mark - Private methods
 
 - (void)updateViews
 {
-    // Update the task text
+    // Update the text for the current task
     if (currentTaskIndex < [self.tasks count]) {
         Task *task = [self.tasks objectAtIndex:currentTaskIndex];
         self.titleLabel.text = [task.name uppercaseString];
@@ -124,7 +125,11 @@
     self.descriptionLabel.frame = frame;
     self.scrollView.contentSize = CGSizeMake(self.scrollView.bounds.size.width, CGRectGetMaxY(frame) + self.titleLabel.frame.origin.y);
     
-    self.nextTaskButton.enabled = (currentTaskIndex < [self.tasks count] - 1);
+    // Show next task button if there is a next task, otherwise end test
+    self.nextTaskButton.hidden = (currentTaskIndex >= [self.tasks count] - 1);
+    self.endTestButton.hidden = !self.nextTaskButton.hidden;
+    
+    // Make sure gradient size matches up with its superview
     actionGradient.frame = self.actionButtonsView.bounds;
 }
 

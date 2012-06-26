@@ -22,10 +22,12 @@
 @property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (strong, nonatomic) IBOutlet UIView *actionButtonsView;
 @property (strong, nonatomic) IBOutlet UIButton *nextTaskButton;
+@property (strong, nonatomic) IBOutlet UIButton *endTestButton;
 @property (strong, nonatomic) NSArray *tasks;
 
 - (id)initWithTasks:(NSArray *)tasks;
 - (IBAction)nextTaskButtonPressed:(id)sender;
 - (IBAction)endTestButtonPressed:(id)sender;
+- (IBAction)continueButtonPressed:(id)sender;
 
 @end
