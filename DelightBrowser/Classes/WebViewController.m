@@ -16,6 +16,11 @@
 + (void)startWithAppToken:(NSString *)appToken annotation:(NSInteger)annotation;
 @end
 
+@interface WebViewController () {
+    BOOL firstAppearance;
+}
+@end
+
 @implementation WebViewController
 
 @synthesize browserSession = _browserSession;
@@ -33,6 +38,8 @@
         
         [Delight setDebugLogEnabled:YES];
         [Delight startWithAppToken:browserSession.appToken annotation:browserSession.annotationMode];
+
+        firstAppearance = YES;
     }
     return self;    
 }
@@ -51,6 +58,11 @@
         self.webView.frame = self.view.bounds;
         self.floatingTasksButton.layer.masksToBounds = YES;
         self.floatingTasksButton.layer.cornerRadius = 10.0;
+    }
+    
+    if (firstAppearance) {
+        // Show tasks window with just start button
+        [self tasksButtonPressed:nil];
     }
 }
 
@@ -95,11 +107,12 @@
 
 - (IBAction)tasksButtonPressed:(id)sender
 {    
-    TaskViewController *taskController = [[TaskViewController alloc] initWithTasks:self.browserSession.tasks];
+    TaskViewController *taskController = [[TaskViewController alloc] initWithTasks:self.browserSession.tasks firstAppearance:firstAppearance];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:taskController];
     navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     
-    [self presentViewController:navigationController animated:YES completion:NULL];
+    [self presentViewController:navigationController animated:!firstAppearance completion:NULL];
+    firstAppearance = NO;
 }
 
 #pragma mark - UIWebViewDelegate
