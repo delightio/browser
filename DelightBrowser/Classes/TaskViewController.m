@@ -46,11 +46,8 @@
             break;
         }
     }
-    
-    [self updateViews];
-    
+        
     actionGradient = [CAGradientLayer layer];
-    actionGradient.frame = self.actionButtonsView.bounds;
     actionGradient.colors = [NSArray arrayWithObjects:(id)[UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1.0].CGColor, [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0].CGColor, nil];
     actionGradient.locations = [NSArray arrayWithObjects:[NSNumber numberWithFloat:0.0], [NSNumber numberWithFloat:1.0], nil];
     [self.actionButtonsView.layer insertSublayer:actionGradient atIndex:0];
@@ -75,6 +72,12 @@
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {    
+    [self updateViews];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     [self updateViews];
 }
 
