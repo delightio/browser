@@ -1,6 +1,6 @@
 {
     "id": 12345,
-    "url": "http://airbnb.com",
+    "url": "http://www.youtube.com",
     "appToken": "6b11a73985b3a6873aa8a9c5229",
     "annotation": 0,
     "statusBarHidden": true,
@@ -9,8 +9,8 @@
     [
         {
             "id": 100,
-            "name": "Sign up for an account",
-            "description": "Register for an Airbnb account."
+            "name": "Sign up",
+            "description": "Create a new YouTube account for yourself."
         },
         {
             "id": 101,
@@ -19,23 +19,23 @@
         },
         {
             "id": 102,
-            "name": "Search for rooms in SF",
-            "description": "Search for available rooms in San Francisco for tonight."
+            "name": "Search for videos",
+            "description": "Get a list of videos by freddiew."
         },
         {
             "id": 103,
-            "name": "Filter by price",
-            "description": "Only show rooms between $80 and $150 per night."
+            "name": "Play a video",
+            "description": "Play the first video that you see in your search results."
         },
         {
             "id": 104,
-            "name": "Book a room",
-            "description": "Book a room in San Francisco for next Tuesday."
+            "name": "Watch in HD",
+            "description": "Watch the video in high definition."
         },
         {
             "id": 105,
-            "name": "Find directions",
-            "description": "Use the built-in mapping tool to find directions between SFO airport and your booked accommodation."
+            "name": "Upload a video",
+            "description": "Upload a video from your phone."
         }
     ]
 }

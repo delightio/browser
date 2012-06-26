@@ -1,6 +1,6 @@
 {
     "id": 12345,
-    "url": "http://www.delight.io",
+    "url": "http://maps.google.com",
     "appToken": "6b11a73985b3a6873aa8a9c5229",
     "annotation": 0,
     "statusBarHidden": false,
@@ -9,23 +9,23 @@
     [
         {
             "id": 100,
-            "name": "Register a new account",
-            "description": "Create a new Delight account for yourself."
+            "name": "Find directions",
+            "description": "Find a driving route between San Francisco and Los Angeles."
         },
         {
             "id": 101,
-            "name": "Log in",
-            "description": "Log in to your account."
+            "name": "Use Street View",
+            "description": "Use Street View to look at San Francisco City Hall."
         },
         {
             "id": 102,
-            "name": "Create a new app",
-            "description": "Create an app from your dashboard."
+            "name": "Find walking duration",
+            "description": "Find how long it will take to walk from your current location to New York City."
         },
         {
             "id": 103,
-            "name": "Find the setup instructions",
-            "description": "Find the page with the setup instructions."
+            "name": "Find the nearest restaurant",
+            "description": "Find the nearest restaurant to your current location."
         }
     ]
 }
