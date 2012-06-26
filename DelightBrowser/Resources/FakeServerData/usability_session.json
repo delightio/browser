@@ -1,0 +1,25 @@
+{
+    "id": 12345,
+    "url": "http://www.delight.io",
+    "appToken": "6b11a73985b3a6873aa8a9c5229",
+    "annotation": 1,
+    "statusBarHidden": false,
+    "tasks":
+    [
+        {
+            "id": 100,
+            "name": "Register a new account",
+            "description": "Create a new Delight account for yourself."
+        },
+        {
+            "id": 101,
+            "name": "Log in",
+            "description": "Log in to your account."
+        },
+        {
+            "id": 102,
+            "name": "Create a new app",
+            "description": "Create an app from your dashboard."
+        }     
+    ]
+}
